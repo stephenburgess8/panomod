@@ -15,7 +15,7 @@ const ExamplePageText = () => (
 
 const PanoView = () => (
   <div className="panoview">
-    <img className="panoview-image" src="resources/images/panorama_arboretum_1.jpg" alt="Arboretum Panorama" />
+    <img className="panoview-image" src="resources/images/panoroma_arboretum_1.jpg" alt="Arboretum Panorama" />
   </div>
 );
 
