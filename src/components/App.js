@@ -6,6 +6,8 @@ import PanoViewer from './PanoViewer'
 import PageNotFound from './PageNotFound'
 import Breadcrumbs from './Breadcrumbs'
 
+import '../styles/root'
+
 export default function App() {
   return (
     <div className='root'>
