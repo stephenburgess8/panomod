@@ -14,7 +14,7 @@ function BreadcrumbsItem({ match }) {
   const to = title === undefined ? '/' : match.url
 
   return (
-    <span>
+    <div className='panomod-breadcrumbs'>
       <Interactive
         as={ Link }
         to={ to }
@@ -28,7 +28,7 @@ function BreadcrumbsItem({ match }) {
           path={ `${ match.url === '/' ? '' : match.url }/:path` }
         />
       }
-    </span>
+    </div>
   )
 }
 
