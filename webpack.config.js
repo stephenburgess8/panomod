@@ -1,24 +1,32 @@
-const webpack = require('webpack');
+const webpack = require("webpack");
 
 module.exports = {
-  entry: `${__dirname}/src/index.js`,
+  entry: `${__dirname}/src/index.jsx`,
   output: {
     path: `${__dirname}/build`,
-    publicPath: '/build/',
+    publicPath: "/build/",
     filename: 'bundle.js',
   },
 
   module: {
     loaders: [
-      { test: /\.js$/, loader: "jsx-loader", exclude: /node_modules/ },
-      { test: /\.less$/, loader: "css!less" }
-    ],
-    rules: [
-      { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader' },
-    ],
+      {
+        test: /\.jsx$/,
+        loader: "babel-loader",
+        exclude: /node_modules/,
+        query: {
+          presets: ["es2015", "react", "stage-1"]
+        }
+      },
+      { test: /\.less$/, loaders: ["style-loader", "css-loader", "less-loader"] }
+    ]
   },
 
-  plugins: process.argv.indexOf('-p') === -1 ? [] : [
+  resolve: {
+    extensions: [".js", ".jsx", ".less"],
+  },
+
+  plugins: process.argv.indexOf("-p") === -1 ? [] : [
     new webpack.optimize.UglifyJsPlugin({
       output: {
         comments: false,
