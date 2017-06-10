@@ -32,7 +32,7 @@ export default function PanoViewer() {
         )}
       />
       <Route
-        exact path="/example"
+        exact path="/panoviewer"
         render={() => (
           <div>
             <PanoView />

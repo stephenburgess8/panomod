@@ -7,5 +7,5 @@ node_modules
 # Files marked with gitigx
 *gitigx*
 
-.DS_Store
+/.DS_Store
 */.DS_Store
