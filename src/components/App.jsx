@@ -6,7 +6,7 @@ import PanoViewer from './PanoViewer'
 import PageNotFound from './PageNotFound'
 import Breadcrumbs from './Breadcrumbs'
 
-import '../styles/root'
+import '../styles/root.less'
 
 export default function App() {
   return (
