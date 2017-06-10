@@ -6,24 +6,25 @@ import PanoViewer from './PanoViewer'
 import PageNotFound from './PageNotFound'
 import Breadcrumbs from './Breadcrumbs'
 
-import '../styles/root'
+import '../styles/panomod'
 
 export default function App() {
   return (
-    <div className='root'>
-      <h1 className='root-title'>Panomod Panorama Viewer</h1>
+    <div className='panomod'>
+      <div className='panomod-container'>
+        <h1 className='panomod-title'>Panomod Panorama Viewer</h1>
 
-      <nav>
-        <Breadcrumbs />
-      </nav>
+        <nav>
+          <Breadcrumbs />
+        </nav>
 
-      <Switch>
-        <Route exact path='/' component={ Home } />
-        <Route path='/panoviewer' component={ PanoViewer } />
-        <Route component={ PageNotFound } />
-      </Switch>
-
-      <div className='root-footer'>
+        <Switch>
+          <Route exact path='/' component={ Home } />
+          <Route path='/panoviewer' component={ PanoViewer } />
+          <Route component={ PageNotFound } />
+        </Switch>
+      </div>
+      <div className='panomod-footer'>
         <Interactive
           as='a'
           href='http://www.uxstephen.com'
