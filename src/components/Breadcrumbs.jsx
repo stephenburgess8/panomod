@@ -14,7 +14,7 @@ function BreadcrumbsItem({ match }) {
   const to = title === undefined ? '/' : match.url
 
   return (
-    <div className='panomod-breadcrumbs'>
+    <span className='pano-breadcrumb'>
       <Interactive
         as={ Link }
         to={ to }
@@ -28,7 +28,7 @@ function BreadcrumbsItem({ match }) {
           path={ `${ match.url === '/' ? '' : match.url }/:path` }
         />
       }
-    </div>
+    </span>
   )
 }
 
@@ -38,6 +38,10 @@ BreadcrumbsItem.propTypes = {
 
 export default function Breadcrumbs() {
   return (
-    <Route path='/' component={ BreadcrumbsItem } />
+    <Route
+      className='pano-breadcrumbs'
+      component={ BreadcrumbsItem }
+      path='/'
+    />
   )
 }

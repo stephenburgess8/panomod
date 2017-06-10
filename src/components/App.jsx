@@ -11,8 +11,8 @@ import '../styles/panomod'
 export default function App() {
   return (
     <div className='panomod'>
-      <div className='panomod-container'>
-        <h1 className='panomod-title'>Panomod Panorama Viewer</h1>
+      <div className='pano-container'>
+        <h1 className='pano-title'>Panomod Panorama Viewer</h1>
 
         <nav>
           <Breadcrumbs />
@@ -24,10 +24,10 @@ export default function App() {
           <Route component={ PageNotFound } />
         </Switch>
       </div>
-      <div className='panomod-footer'>
+      <div className='pano-footer'>
         <Interactive
           as='a'
-          className='panomod-link'
+          className='pano-link'
           href='http://www.uxstephen.com'
           interactiveChild
           focus={ {} }
