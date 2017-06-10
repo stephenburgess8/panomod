@@ -1,45 +1,38 @@
-import React from 'react';
-import Interactive from 'react-interactive';
-import { Switch, Route } from 'react-router-dom';
-import Home from './Home';
-import PanoViewer from './PanoViewer';
-import PageNotFound from './PageNotFound';
-import Breadcrumbs from './Breadcrumbs';
-import s from '../styles/app.style';
+import React from 'react'
+import Interactive from 'react-interactive'
+import { Switch, Route } from 'react-router-dom'
+import Home from './Home'
+import PanoViewer from './PanoViewer'
+import PageNotFound from './PageNotFound'
+import Breadcrumbs from './Breadcrumbs'
 
 export default function App() {
   return (
-    <div className="root" style={s.root}>
-      <h1 style={s.title}>Panomod Panorama Viewer</h1>
-      <Interactive
-        as="a"
-        href="https://github.com/stephenburgess8/panomod"
-        style={s.repoLink}
-        {...s.link}
-      >https://github.com/stephenburgess8/panomod</Interactive>
+    <div className='root'>
+      <h1 className='root-title'>Panomod Panorama Viewer</h1>
 
-      <nav style={s.breadcrumbs}>
+      <nav>
         <Breadcrumbs />
       </nav>
 
       <Switch>
-        <Route exact path="/" component={Home} />
-        <Route path="/panoviewer" component={PanoViewer} />
-        <Route component={PageNotFound} />
+        <Route exact path='/' component={ Home } />
+        <Route path='/panoviewer' component={ PanoViewer } />
+        <Route component={ PageNotFound } />
       </Switch>
 
-      <div style={s.creditLine}>
+      <div className='root-footer'>
         <Interactive
-          as="a"
-          href="http://www.uxstephen.com"
+          as='a'
+          href='http://www.uxstephen.com'
           interactiveChild
-          focus={{}}
-          touchActive={{}}
+          focus={ {} }
+          touchActive={ {} }
           touchActiveTapOnly
         >
-          Code and concept by <span {...s.childLink}>Stephen Burgess</span>
+          Code and concept by <i className='name-person'>Stephen Burgess</i>
         </Interactive>
       </div>
     </div>
-  );
+  )
 }
