@@ -16,6 +16,9 @@ export default function Home() {
   return (
     <div>
       <p style={s.p}>
+        Panomod for life.
+      </p>
+      <p style={s.p}>
         This is an example single page app built
         with React and React&nbsp;Router using {' '}
         <Code>BrowserRouter</Code>. Navigate with the links below and
