@@ -4,7 +4,7 @@ import { BrowserRouter } from 'react-router-dom';
 import App from './components/App';
 
 ReactDOM.render(
-  <BrowserRouter basename="/repo-name">
+  <BrowserRouter basename="/panomod">
     <App />
   </BrowserRouter>,
   document.getElementById('root'),
