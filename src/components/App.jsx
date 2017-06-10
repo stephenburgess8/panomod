@@ -27,6 +27,7 @@ export default function App() {
       <div className='panomod-footer'>
         <Interactive
           as='a'
+          className='panomod-link'
           href='http://www.uxstephen.com'
           interactiveChild
           focus={ {} }
