@@ -37,6 +37,7 @@ class PanoView extends Component {
           alt='Arboretum Panorama'
           className='panoview-image'
           onDrag={ this.onDrag }
+          onDragStart={ this.onDragStart }
           onDragStop={ this.onDragStop }
           src='resources/images/panoroma_arboretum_1.jpg'
           style={ { marginLeft } }
