@@ -27,7 +27,7 @@ class PanoView extends Component {
   }
 
   render() {
-    const marginLeft = this.state.startX + this.state.screenX
+    const marginLeft = this.state.screenX - this.state.startX
     console.log(marginLeft)
     return (
       <div
@@ -60,7 +60,6 @@ class PanoView extends Component {
   }
 
   dragStop(event) {
-    console.log(event)
     const startX = this.state.startX + event.screenX
     console.log(`onDragStop ${ startX }`)
     this.setState({ startX })
