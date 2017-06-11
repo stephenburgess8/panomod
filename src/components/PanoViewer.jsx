@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Component } from 'react'
 import Interactive from 'react-interactive'
 import { Switch, Route, Link } from 'react-router-dom'
 import ExampleTwoDeepComponent from './ExampleTwoDeepComponent'
@@ -12,11 +12,36 @@ const ExamplePageText = () => (
   </p>
 )
 
-const PanoView = () => (
-  <div className='panoview'>
-    <img className='panoview-image' src='resources/images/panoroma_arboretum_1.jpg' alt='Arboretum Panorama' />
-  </div>
-)
+class PanoView extends Component {
+  constructor() {
+    super()
+    this.state = {
+      event: null,
+    }
+
+    this.onDragStart = this.dragStart.bind(this)
+  }
+
+  render() {
+    return (
+      <div
+        className='panoview'
+        onDragStart={ this.onDragStart }
+      >
+        <img className='panoview-image' src='resources/images/panoroma_arboretum_1.jpg' alt='Arboretum Panorama' />
+      </div>
+    )
+  }
+
+  dragStart(event) {
+    console.log(event)
+    this.setState(() => event)
+    const data = {
+      dragging: true,
+    }
+    event.dataTransfer.setData('text', JSON.stringify(data))
+  }
+}
 
 export default function PanoViewer() {
   return (
