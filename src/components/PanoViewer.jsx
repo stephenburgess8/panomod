@@ -56,7 +56,7 @@ class PanoView extends Component {
     console.log('onDragStart ', x)
     if (this.state.startX) {
       const marginLeft = this.state.screenX - this.state.startX
-      const startX = x + marginLeft
+      const startX = -x + marginLeft
       const screenX = x
       this.setState({
         screenX,
