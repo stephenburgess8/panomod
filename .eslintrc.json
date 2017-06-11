@@ -16,6 +16,7 @@
     "react/jsx-curly-spacing": [2, "always"],
     "react/jsx-filename-extension": "off",
     "react/no-array-index-key": "off",
+    "react/sort-comp": [0, {}],
     "semi": [2, "never"],
     "template-curly-spacing": ["error", "always"]
   },

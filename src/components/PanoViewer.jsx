@@ -34,12 +34,19 @@ class PanoView extends Component {
   }
 
   dragStart(event) {
-    console.log(event.getScreenX())
-    this.setState(() => event)
-    const data = {
-      dragging: true,
-    }
-    event.dataTransfer.setData('text', JSON.stringify(data))
+    console.log(event)
+    const screenX = event.screenX
+    this.setState(() => screenX)
+    // const data = {
+    //   dragging: true,
+    // }
+    // event.dataTransfer.setData('text', JSON.stringify(data))
+  }
+
+  dragStop(event) {
+    console.log(event)
+    const screenX = event.screenX
+    this.setState(() => screenX)
   }
 }
 
