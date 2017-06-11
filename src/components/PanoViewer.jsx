@@ -23,7 +23,6 @@ class PanoView extends Component {
 
     this.onDrag = this.drag.bind(this)
     this.onDragStart = this.dragStart.bind(this)
-    this.onDragStop = this.dragStop.bind(this)
   }
 
   render() {
@@ -38,7 +37,6 @@ class PanoView extends Component {
           className='panoview-image'
           onDrag={ this.onDrag }
           onDragStart={ this.onDragStart }
-          onDragStop={ this.onDragStop }
           src='resources/images/panoroma_arboretum_1.jpg'
           style={ { marginLeft } }
         />
