@@ -58,7 +58,7 @@ class PanoView extends Component {
     if (this.state.startX) {
       const screenX = 0
 
-      startX += this.state.screenX + this.state.startX
+      startX = this.state.startX - event.screenX
       this.setState({
         screenX,
         startX,
