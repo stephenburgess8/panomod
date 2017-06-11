@@ -22,12 +22,13 @@ class PanoView extends Component {
     }
 
     this.onDrag = this.drag.bind(this)
+    this.onDragStart = this.dragStart.bind(this)
     this.onDragStop = this.dragStop.bind(this)
   }
 
   render() {
     const marginLeft = this.state.startX + this.state.screenX
-
+    console.log(marginLeft)
     return (
       <div
         className='panoview'
@@ -46,13 +47,15 @@ class PanoView extends Component {
 
   drag(event) {
     const screenX = event.screenX
-    if (!this.state.startX) {
-      const startX = screenX
-      this.setState({ startX })
-    }
 
     console.log(event)
     this.setState({ screenX })
+  }
+
+  dragStart(event) {
+    const startX = event.screenX
+
+    this.setState({ startX })
   }
 
   dragStop(event) {
