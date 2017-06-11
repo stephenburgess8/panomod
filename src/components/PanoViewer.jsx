@@ -4,14 +4,6 @@ import { Switch, Route, Link } from 'react-router-dom'
 import ExampleTwoDeepComponent from './ExampleTwoDeepComponent'
 import PageNotFound from './PageNotFound'
 
-function drag(event) {
-  console.log(event)
-  // const data = {
-  //   dragging: true,
-  // }
-  // event.dataTransfer.setData('text', JSON.stringify(data))
-}
-
 const ExamplePageText = () => (
   <p>
     This is an example page. Refresh the page or copy/paste the url to
@@ -24,11 +16,13 @@ class PanoView extends Component {
   constructor() {
     super()
     this.state = {
-      event: null,
+      screenX: 0,
     }
   }
 
   render() {
+    const marginLeft = this.state.screenX
+
     return (
       <div
         className='panoview'
@@ -38,9 +32,16 @@ class PanoView extends Component {
           className='panoview-image'
           onDrag={ drag }
           src='resources/images/panoroma_arboretum_1.jpg'
+          style={ { marginLeft } }
         />
       </div>
     )
+  }
+
+  drag(event) {
+    const screenX = event.screenX
+    console.log(screenX)
+    this.setState({ screenX })
   }
 }
 
