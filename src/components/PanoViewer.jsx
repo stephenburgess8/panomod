@@ -18,6 +18,8 @@ class PanoView extends Component {
     this.state = {
       screenX: 0,
     }
+
+    this.onDrag = this.drag.bind(this)
   }
 
   render() {
@@ -30,7 +32,7 @@ class PanoView extends Component {
         <img
           alt='Arboretum Panorama'
           className='panoview-image'
-          onDrag={ drag }
+          onDrag={ this.onDrag }
           src='resources/images/panoroma_arboretum_1.jpg'
           style={ { marginLeft } }
         />
