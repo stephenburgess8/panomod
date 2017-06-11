@@ -35,6 +35,7 @@ class PanoView extends Component {
         <img
           alt='Arboretum Panorama'
           className='panoview-image'
+          draggable='true'
           onDrag={ this.onDrag }
           onDragStart={ this.onDragStart }
           src='resources/images/panoroma_arboretum_1.jpg'
@@ -66,6 +67,8 @@ class PanoView extends Component {
       const startX = event.screenX
       this.setState({ startX })
     }
+
+    event.dataTransfer.setData('text/plain', 'node')
   }
 }
 
