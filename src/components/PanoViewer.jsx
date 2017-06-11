@@ -27,7 +27,7 @@ class PanoView extends Component {
 
   render() {
     const marginLeft = this.state.screenX - this.state.startX
-    console.log(this.state.screenX)
+    console.log(`screen x ${ this.state.screenX }, start x ${ startX }`)
     return (
       <div
         className='panoview'
