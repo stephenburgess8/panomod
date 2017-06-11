@@ -20,6 +20,7 @@ class PanoView extends Component {
     }
 
     this.onDragStart = this.dragStart.bind(this)
+    this.onDragStop = this.dragStop.bind(this)
   }
 
   render() {
@@ -27,6 +28,7 @@ class PanoView extends Component {
       <div
         className='panoview'
         onDragStart={ this.onDragStart }
+        onDragStop={ this.onDragStop }
       >
         <img className='panoview-image' src='resources/images/panoroma_arboretum_1.jpg' alt='Arboretum Panorama' />
       </div>
