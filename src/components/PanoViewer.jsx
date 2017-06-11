@@ -4,18 +4,12 @@ import { Switch, Route, Link } from 'react-router-dom'
 import ExampleTwoDeepComponent from './ExampleTwoDeepComponent'
 import PageNotFound from './PageNotFound'
 
-function dragStart(event) {
+function drag(event) {
   console.log(event)
   // const data = {
   //   dragging: true,
   // }
   // event.dataTransfer.setData('text', JSON.stringify(data))
-}
-
-function dragStop(event) {
-  console.log(event)
-  // const screenX = event.screenX
-  // this.setState(() => screenX)
 }
 
 const ExamplePageText = () => (
@@ -38,8 +32,7 @@ class PanoView extends Component {
     return (
       <div
         className='panoview'
-        onDragStart={ dragStart }
-        onDragStop={ dragStop }
+        onDrag={ drag }
       >
         <img className='panoview-image' src='resources/images/panoroma_arboretum_1.jpg' alt='Arboretum Panorama' />
       </div>
