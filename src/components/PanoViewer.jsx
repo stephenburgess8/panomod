@@ -17,13 +17,16 @@ class PanoView extends Component {
     super()
     this.state = {
       screenX: 0,
+      startX: null,
+      endX: null
     }
 
     this.onDrag = this.drag.bind(this)
+    this.onDragStop = this.dragStop.bind(this)
   }
 
   render() {
-    const marginLeft = this.state.screenX
+    const marginLeft = this.state.startX - this.state.screenX
 
     return (
       <div
@@ -33,6 +36,7 @@ class PanoView extends Component {
           alt='Arboretum Panorama'
           className='panoview-image'
           onDrag={ this.onDrag }
+          onDragStop={ this.onDragStop }
           src='resources/images/panoroma_arboretum_1.jpg'
           style={ { marginLeft } }
         />
@@ -42,8 +46,19 @@ class PanoView extends Component {
 
   drag(event) {
     const screenX = event.screenX
-    console.log(screenX)
+    if (!this.state.startX) {
+      const startX = screenX
+      this.setState({ startX })
+    }
+
+    console.log(event)
     this.setState({ screenX })
+  }
+
+  dragStop(event) {
+    console.log(event)
+    const startX = this.state.startX - event.screenX
+    this.setState({ startX })
   }
 }
 
