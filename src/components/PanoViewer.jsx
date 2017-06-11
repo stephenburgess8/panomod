@@ -50,6 +50,11 @@ class PanoView extends Component {
     if (screenX !== 0) {
       this.setState({ screenX })
     }
+
+    event.dataTransfer.setData('text/plain', 'node')
+
+    const target = event.currentTarget
+    target.style.cursor = 'grabbing'
   }
 
   dragStart(event) {
