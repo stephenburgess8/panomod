@@ -27,7 +27,7 @@ class PanoView extends Component {
 
   render() {
     const marginLeft = this.state.screenX - this.state.startX
-    console.log(marginLeft)
+    console.log(this.state.screenX)
     return (
       <div
         className='panoview'
@@ -55,7 +55,8 @@ class PanoView extends Component {
 
     if (this.state.startX) {
       const screenX = 0
-      startX += this.state.startX
+
+      startX = this.state.screenX - this.state.startX
       this.setState({
         screenX,
         startX,
