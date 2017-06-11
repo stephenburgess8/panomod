@@ -52,18 +52,18 @@ class PanoView extends Component {
   }
 
   dragStart(event) {
-    let startX = event.screenX
-    console.log('onDragStart ', startX)
-
+    const x = event.screenX
+    console.log('onDragStart ', x)
     if (this.state.startX) {
-      const screenX = 0
-
-      startX = this.state.startX - event.screenX
+      const marginLeft = this.state.screenX - this.state.startX
+      const startX = x + marginLeft
+      const screenX = x
       this.setState({
         screenX,
         startX,
       })
     } else {
+      const startX = event.screenX
       this.setState({ startX })
     }
   }
