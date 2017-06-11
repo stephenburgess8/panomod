@@ -32,9 +32,13 @@ class PanoView extends Component {
     return (
       <div
         className='panoview'
-        onDrag={ drag }
       >
-        <img className='panoview-image' src='resources/images/panoroma_arboretum_1.jpg' alt='Arboretum Panorama' />
+        <img
+          alt='Arboretum Panorama'
+          className='panoview-image'
+          onDrag={ drag }
+          src='resources/images/panoroma_arboretum_1.jpg'
+        />
       </div>
     )
   }
