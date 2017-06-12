@@ -1,16 +1,7 @@
 import React, { Component } from 'react'
 import Interactive from 'react-interactive'
 import { Switch, Route, Link } from 'react-router-dom'
-import ExampleTwoDeepComponent from './ExampleTwoDeepComponent'
 import PageNotFound from './PageNotFound'
-
-const ExamplePageText = () => (
-  <p>
-    This is an example page. Refresh the page or copy/paste the url to
-    test out the redirect functionality (this same page should load
-      after the redirect).
-  </p>
-)
 
 class PanoView extends Component {
   constructor() {
@@ -27,11 +18,9 @@ class PanoView extends Component {
 
   render() {
     const marginLeft = this.state.screenX - this.state.startX
-    console.log(`screen x ${ this.state.screenX }, start x ${ this.state.startX }`)
+    
     return (
-      <div
-        className='panoview'
-      >
+      <div className='panoview'>
         <img
           alt='Arboretum Panorama'
           className='panoview-image'
@@ -81,25 +70,10 @@ export default function PanoViewer() {
   return (
     <Switch>
       <Route
-        exact path='/panoviewer/two-deep'
-        render={ ({ location }) => (
-          <div>
-            <ExamplePageText />
-            <ExampleTwoDeepComponent location={ location } />
-          </div>
-        ) }
-      />
-      <Route
         exact path='/panoviewer'
         render={ () => (
           <div>
             <PanoView />
-            <div>
-              <Interactive
-                as={ Link }
-                to='/panoviewer/two-deep?field1=foo&field2=bar#boom!'
-              >Example two deep with query and hash</Interactive>
-            </div>
           </div>
         ) }
       />
